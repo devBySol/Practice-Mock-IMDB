@@ -14,7 +14,7 @@
 <body>
     <header>
         @if (ViewData["Title"] != "Home") {
-            <nav class="navbar navbar-expand-lg navbar-light bg-black w-100 flex flex-column top-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-black w-100 top-0">
                 <div class="container-fluid">
                     <a class="navbar-brand ps-4" href="/">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg" alt="IMDb Logo" height="40">
@@ -25,11 +25,12 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-center bg-transparent" id="navbarNav">
                         <ul class="navbar-nav gap-5">
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Movie" asp-action="Index">Movies</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Movie" asp-action="News">News</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Rate" asp-action="Index">Community</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Review" asp-action="AllReviews">Reviews</a></li>
-                        </ul>
+                            <ul class="navbar-nav gap-5">
+                                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Movie" asp-action="Index">Movies</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Movie" asp-action="News">News</a>
+                                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Review" asp-action="AllReviews">Community</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Rate" asp-action="Index">Account</a></li>
+                            </ul>
                     </div>
                 </div>
             </nav>
@@ -48,8 +49,8 @@
                     <ul class="navbar-nav gap-5">
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Movie" asp-action="Index">Movies</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Movie" asp-action="News">News</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Rate" asp-action="Index">Community</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Review" asp-action="AllReviews">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Review" asp-action="AllReviews">Community</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Rate" asp-action="Index">Account</a></li>
                     </ul>
                 </div>
             </div>
