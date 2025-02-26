@@ -1,0 +1,133 @@
+﻿@model Movie
+
+<div class="container-fluid mt-5 p-0">
+    @* Movie Hero Section *@
+    <div class="position-relative text-white w-100" style="height: 450px; background: url('@Model.PosterUrl') no-repeat center/cover;">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.6);"></div>
+
+        <div class="container h-100 position-relative">
+            <div class="row h-100 align-items-center justify-content-between pt-5">
+                @* Movie Info - Left Side *@
+                <div class="col-md-3 p-5 pb-0 text-start text-white">
+                    <h1 class="fw-bold">@Model.Title</h1>
+                    <p class="lead">@Model.Genre | @Model.ReleaseYear</p>
+                    <a href="@Model.Trailer" class="btn btn-warning btn-md rounded-pill text-dark fw-bold">
+                        Watch Trailer <i class="bi bi-play-circle"></i>
+                    </a>
+                </div>
+
+                @* Rating Section - Right Side *@
+                <div class="col-md-3 text-center text-white">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="rounded-circle border border-3 border-light d-flex align-items-center justify-content-center"
+                             style="width: 100px; height: 100px; background: rgba(0,0,0,0.7);">
+                            <span class="fs-1 fw-bold text-warning">@Model.Rating</span>
+                        </div>
+                        <p class="text-white mt-2">Average Rating</p>
+                        <div class="text-start text-white w-75">
+                            <p class="mb-1">9.3 - Metacritic</p>
+                            <div class="progress" style="height: 5px;">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 93%;"></div>
+                            </div>
+                            <p class="mb-1 mt-2">8.9 - Average Users</p>
+                            <div class="progress" style="height: 5px;">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 89%;"></div>
+                            </div>
+                            <p class="mb-1 mt-2">9.1 - Rotten Tomatoes</p>
+                            <div class="progress" style="height: 5px;">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 91%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Movie Details *@
+    <div class="container mt-5 px-5">
+        <div class="row g-4">
+            @* Left: Tabs for Overview and Casting *@
+            <div class="col-md-8">
+                <ul class="nav nav-tabs bg-light " id="movieTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active px-4 py-2" id="overview-tab" data-bs-toggle="pill" data-bs-target="#overview" type="button" role="tab">
+                            Overview
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link px-4 py-2" id="casting-tab" data-bs-toggle="pill" data-bs-target="#casting" type="button" role="tab">
+                            Casting
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content bg-light p-4" id="movieTabContent">
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel">
+           
+                        <p class="text-muted">@Model.Description</p>
+                        <div class="row">
+                            <div class="col-6">
+                                <p><strong>Director:</strong> @Model.Director</p>
+                                <p><strong>Release Year:</strong> @Model.ReleaseYear</p>
+                            </div>
+                            <div class="col-6">
+                                <p><strong>Genre:</strong> @Model.Genre</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="casting" role="tabpanel">
+                        <h4 class="fw-bold mb-3">Casting</h4>
+                        <div class="row row-cols-1 row-cols-md-2 g-3">
+                            @foreach (var actor in Model.Cast)
+                            {
+                                <div class="col">
+                                    <div class="d-flex align-items-center">
+                                        <img src="@actor.ProfileImageUrl" alt="@actor.Name" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                        <div>
+                                            <strong>@actor.Name</strong>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            @* Right: Poster Image *@
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 20px;">
+                    <img src="@Model.PosterUrl" alt="@Model.Title Poster" class="w-100" style="max-height: 400px; object-fit: contain ;">
+                    <p class="text-center text-muted mt-2"><small>Official Poster</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .nav-tabs .nav-link {
+        font-weight: normal;
+        color: #000;
+    }
+
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            color: #ffeb3b;
+            background-color: #000;
+            border-color: #000;
+        }
+
+
+        .nav-tabs .nav-link.active {
+            border-bottom: none;
+        }
+
+
+        .nav-tabs .nav-link:hover:not(.active) {
+            color: #ffeb3b;
+        }
+</style>

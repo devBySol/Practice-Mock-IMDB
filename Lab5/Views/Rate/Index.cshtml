@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Movie>
+
+<div class="container mt-4">
+    <h1 class="text-center text-warning">🏆 Movie Rankings</h1>
+
+    <table class="table table-dark table-striped mt-4">
+        <thead>
+            <tr class="text-warning">
+                <th class="text-center">🏅 Rank</th>
+                <th>🎬 Movie Title</th>
+                <th class="text-center">⭐ Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int rank = 1;
+            }
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td class="text-center fw-bold">#@rank</td>
+                    <td>
+                        <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id" class="text-warning text-decoration-none">
+                            @movie.Title
+                        </a>
+                    </td>
+                    <td class="text-center">@movie.Rating / 5.0</td>
+                </tr>
+                rank++;
+            }
+        </tbody>
+    </table>
+</div>
