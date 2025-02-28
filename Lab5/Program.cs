@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IMovieRepository, MockMovieRepository>();
 builder.Services.AddHttpClient<MovieService>();
+builder.Services.AddHttpClient();
+
 
 
 var app = builder.Build();

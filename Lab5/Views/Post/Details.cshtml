@@ -1,0 +1,59 @@
+﻿@model Lab5.Models.PostDetailsViewModel
+
+<div class="container bg-light p-5">
+    <div class="p-4 mt-5">
+        <h2 class="text-center mt-5">@Model.Post.Title</h2>
+        <p class="text-muted text-center">Posted by @Model.Post.UserName on @Model.Post.DatePosted.ToString("MMM dd, yyyy")</p>
+        <hr>
+        <p>@Model.Post.Content</p>
+    </div>
+
+    <!-- 댓글 섹션 -->
+    <div class="mt-5">
+        <h4 class="mb-4 fw-bold">Comments</h4>
+
+        @if (Model.Comments.Any())
+        {
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="d-flex align-items-start mb-1">
+                  
+                    <div class="w-100">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-1 fw-bold">@comment.UserName</h6>
+                            <small class="text-muted">@comment.DatePosted.ToString("MMM dd, yyyy")</small>
+                        </div>
+                        <p class="mb-2">@comment.Content</p>
+                       
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-muted">No comments yet. Be the first to comment!</p>
+        }
+    </div>
+
+    <!-- 댓글 입력 폼 -->
+    <div class="mt-5">
+
+        <h4>Add a Comment</h4>
+        <form asp-action="AddComment" asp-controller="Post" method="post">
+            <input type="hidden" name="postId" value="@Model.Post.Id" />
+            <div class="mb-3">
+                <label for="userName" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="userName" name="UserName" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Comment</label>
+                <textarea class="form-control" id="content" name="Content" rows="3" required></textarea>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-sm rounded-pill btn-warning">Post Comment</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

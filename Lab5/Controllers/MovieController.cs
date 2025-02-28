@@ -14,7 +14,7 @@ namespace Lab5.Controllers
         }
 
         // All movie
-        public IActionResult Index()
+        public IActionResult Movies()
         {
             var movies = _movieRepository.GetAllMovies();
             return View(movies);

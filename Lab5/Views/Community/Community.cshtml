@@ -1,0 +1,113 @@
+﻿@model Lab5.Models.CommunityViewModel
+
+<div class="container p-5 ">
+
+    <ul class="nav nav-tabs bg-light justify-content-start mt-5 bg-white" id="communityTabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="posts-tab" data-bs-toggle="tab" href="#posts">Community Posts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews">Movie Reviews</a>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-4 bg-light">
+        <div class="tab-pane fade show active" id="posts">
+            <div class="bg-light p-4">
+                <table class="table table-bordered text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th style="width: 10%;">NO</th>
+                            <th style="width: 20%;">Author</th>
+                            <th style="width: 50%;">Title</th>
+                            <th style="width: 20%;">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!Model.Posts.Any())
+                        {
+                            <tr>
+                                <td colspan="4" class="text-muted text-center">No posts yet. Be the first to start a discussion!</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @foreach (var post in Model.Posts.OrderByDescending(p => p.Id))
+                            {
+                                <tr>
+                                    <td>@post.Id</td>
+                                    <td>@post.UserName</td>
+                                    <td class="text-start">
+                                        <a asp-controller="Post" asp-action="Details" asp-route-id="@post.Id" class="text-decoration-none text-dark">
+                                            @post.Title
+                                        </a>
+                                    </td>
+                                    <td>@post.DatePosted.ToString("yyyy.MM.dd")</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <div class="text-center mt-3">
+                    <a href="#" class="btn btn-outline-warning rounded-pill">New Post</a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="reviews">
+            <div class="bg-light shadow-lg p-4">
+       
+
+                @if (!Model.Reviews.Any())
+                {
+                    <p class="text-muted text-center">No reviews yet. Be the first to leave a review!</p>
+                }
+                else
+                {
+                    <div class="row">
+                        @foreach (var review in Model.Reviews)
+                        {
+                            <div class="col-md-3 mb-3">
+                                <div class=" bg-light p-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <strong>@review.UserName</strong>
+                                        <span class="text-warning">⭐ @review.Rating / 5</span>
+                                    </div>
+                                    <p class="mb-2">@review.Comment</p>
+                                    <small class="text-muted">@review.DatePosted.ToString("MMM dd, yyyy")</small>
+                                    <p class="text-muted">
+                                        <strong>Movie:</strong>
+                                        <a href="/Movie/Details/@review.Movie.Id">@review.Movie.Title</a>
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .nav-tabs .nav-link {
+        font-weight: normal;
+        color: #000;
+    }
+
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            color: #ffeb3b;
+            background-color: #000;
+            border-color: #000;
+        }
+
+
+        .nav-tabs .nav-link.active {
+            border-bottom: none;
+        }
+
+
+        .nav-tabs .nav-link:hover:not(.active) {
+            color: #ffeb3b;
+        }
+</style>
