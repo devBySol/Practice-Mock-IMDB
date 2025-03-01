@@ -12,7 +12,7 @@ namespace Lab5.Controllers
             _movieRepository = movieRepository;
         }
 
-        public IActionResult Details(int id)
+        public IActionResult PostDetails(int id)
         {
             var post = _movieRepository.GetPostById(id);
             if (post == null)
