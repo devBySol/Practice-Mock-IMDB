@@ -1,11 +1,12 @@
 using Lab5.Models;
+using Lab5.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IMovieRepository, MockMovieRepository>();
-builder.Services.AddHttpClient<MovieService>();
+builder.Services.AddSingleton<MovieService>();
 builder.Services.AddHttpClient();
 
 

@@ -1,34 +1,68 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Lab5.Models;
+﻿using Lab5.Models;
+using Lab5.Services; 
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using System.Linq;
 
 namespace Lab5.Controllers
 {
     public class MovieController : Controller
     {
-        private readonly IMovieRepository _movieRepository;
+        private readonly MovieService _movieService;
 
-        public MovieController(IMovieRepository movieRepository)
+        public MovieController(MovieService movieService)
         {
-            _movieRepository = movieRepository;
+            _movieService = movieService;
         }
 
-        // All movie
-        public IActionResult Movies()
+    
+        public async Task<IActionResult> Movies()
         {
-            var movies = _movieRepository.GetAllMovies();
+            var movies = await _movieService.GetMoviesAsync();
             return View(movies);
         }
 
-        // movie details
-        public IActionResult MovieDetails(int id)
+      
+        public async Task<IActionResult> MovieDetails(string id)
         {
-            var movie = _movieRepository.GetById(id);
+            if (string.IsNullOrEmpty(id))
+                return NotFound();
+
+            var movies = await _movieService.GetMoviesAsync();
+            var movie = movies.FirstOrDefault(m => m.imdbID == id);
+
             if (movie == null)
             {
                 return NotFound();
             }
+
             return View(movie);
         }
+
+        // Top Rated
+        public async Task<IActionResult> TopRated()
+        {
+            var movies = await _movieService.GetMoviesAsync();
+            var topRatedMovies = movies
+                .Where(m => float.TryParse(m.imdbRating, out float rating) && rating >= 8.0)
+                .OrderByDescending(m => float.Parse(m.imdbRating))
+                .Take(20)
+                .ToList();
+
+            return View("TopRated", topRatedMovies);  
+        }
+
+        // Trending
+        public async Task<IActionResult> Trending()
+        {
+            var movies = await _movieService.GetMoviesAsync();
+            var trendingMovies = movies
+                .OrderByDescending(m => m.imdbVotes)
+                .Take(20)
+                .ToList();
+
+            return View("Treding", trendingMovies);  
+        }
+
     }
 }

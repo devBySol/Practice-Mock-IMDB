@@ -14,13 +14,11 @@ namespace Lab5.Controllers
 
         public IActionResult Community()
         {
-            var viewModel = new CommunityViewModel
-            {
-                Posts = _movieRepository.GetAllPosts(),  
-                Reviews = _movieRepository.GetAllReviews()  
-            };
+            var Posts = _movieRepository.GetAllPosts();
+               
+           
 
-            return View(viewModel);
+            return View(Posts);
         }
     }
 }
