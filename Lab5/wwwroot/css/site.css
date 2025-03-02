@@ -99,14 +99,12 @@ body {
         filter: brightness(1);
     }
 
-    /* 큰 카드 */
     .news-item.large {
         grid-column: span 2;
         grid-row: span 2;
         height: 415px;
     }
 
-    /* 작은 카드 */
     .news-item.medium {
         grid-column: span 2;
         grid-row: span 1;
@@ -147,7 +145,6 @@ body {
     opacity: 0.8;
 }
 
-/* 반응형 (모바일 최적화) */
 @media (max-width: 768px) {
     .news-grid {
         grid-template-columns: repeat(2, 1fr);

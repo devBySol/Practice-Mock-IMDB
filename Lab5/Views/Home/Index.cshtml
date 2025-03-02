@@ -65,11 +65,19 @@
             link.addEventListener("click", function (event) {
                 event.preventDefault();
 
-                navLinks.forEach(l => l.classList.remove("text-warning", "active"));
+
+                //모든 nav에서 기존 클래스 제거 후 기본 클래스 추가
+                navLinks.forEach(l =>  {
+                    l.classList.remove("text-warning", "active");
+                    l.classList.add("text-dark");
+                });
+
+                //선택한 nav에 클래스 추가
+                this.classList.remove("text-dark");
                 this.classList.add("text-warning", "active");
 
+                //AJAX 요청보내서 필터링
                 let filterType = this.getAttribute("data-filter");
-
                 fetch(`${filterUrl}?filter=${filterType}`)
                     .then(response => {
                         if (!response.ok) throw new Error("Network response was not ok.");
