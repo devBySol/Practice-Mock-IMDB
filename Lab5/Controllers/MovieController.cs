@@ -39,30 +39,8 @@ namespace Lab5.Controllers
             return View(movie);
         }
 
-        // Top Rated
-        public async Task<IActionResult> TopRated()
-        {
-            var movies = await _movieService.GetMoviesAsync();
-            var topRatedMovies = movies
-                .Where(m => float.TryParse(m.imdbRating, out float rating) && rating >= 8.0)
-                .OrderByDescending(m => float.Parse(m.imdbRating))
-                .Take(20)
-                .ToList();
-
-            return View("TopRated", topRatedMovies);  
-        }
-
-        // Trending
-        public async Task<IActionResult> Trending()
-        {
-            var movies = await _movieService.GetMoviesAsync();
-            var trendingMovies = movies
-                .OrderByDescending(m => m.imdbVotes)
-                .Take(20)
-                .ToList();
-
-            return View("Treding", trendingMovies);  
-        }
+   
+       
 
     }
 }

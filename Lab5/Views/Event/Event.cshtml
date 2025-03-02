@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Lab5.Models.Event>
+
+<body class="bg-light">
+    <div class="pt-5">
+
+        <ul class="list-group mt-4" style="list-style-type: none; padding-left: 0;">
+        @foreach (var ev in Model)
+        {
+                <li class="m-1 bg-transparent">
+                    <a href="@ev.Link" target="_blank">
+                    <img src="@ev.Poster", class="position-relative w-100" />
+               </a>
+            
+            </li>
+        }
+    </ul>
+    </div>
+</body>

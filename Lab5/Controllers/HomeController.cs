@@ -68,7 +68,9 @@ namespace Lab5.Controllers
                     break;
             }
 
+           
             return PartialView("Filtered", filteredMovies);
         }
     }
     }
+

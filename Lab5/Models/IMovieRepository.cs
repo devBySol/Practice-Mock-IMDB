@@ -11,5 +11,8 @@
         // 댓글 관련 
         IEnumerable<Comment> GetCommentsByPostId(int postId);
         void AddComment(Comment comment);
+
+        // 이벤트 관련
+        IEnumerable<Event> GetAllEvents();
     }
 }
