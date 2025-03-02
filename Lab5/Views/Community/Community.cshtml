@@ -1,15 +1,18 @@
 ﻿@model IEnumerable<Lab5.Models.Post>
 
 <div class="container p-5">
-    <div class="pt-5 fade show active" id="posts">
-        <div class="text-end mt-3">
-            <a href="#" class="btn btn-outline-warning rounded-pill">New Post</a>
+    <h2 class="pt-5 mt-5 text-dark fw-bold text-center">Movie Community</h2>
+    <p class="p-1 text-muted text-center">Feel free to talk about movies with other enthusiasts!</p>
+
+    <div class="fade show active" id="posts">
+        <div class="text-end p-2">
+            <a href="#" class="btn btn-outline-warning rounded-pill">Create New Post</a>
         </div>
         <div class="bg-light p-4">
             <table class="table table-bordered text-center">
                 <thead class="table-light">
                     <tr>
-                        <th style="width: 10%;">NO</th>
+                        <th style="width: 10%;">No</th>
                         <th style="width: 20%;">Author</th>
                         <th style="width: 50%;">Title</th>
                         <th style="width: 20%;">Date</th>
@@ -19,7 +22,7 @@
                     @if (!Model.Any())
                     {
                         <tr>
-                            <td colspan="4" class="text-muted text-center">No posts yet. Be the first to start a discussion!</td>
+                            <td colspan="4" class="text-muted text-center">No posts yet. Be the first to share your thoughts!</td>
                         </tr>
                     }
                     else
@@ -43,25 +46,3 @@
         </div>
     </div>
 </div>
-
-<style>
-    .nav-tabs .nav-link {
-        font-weight: normal;
-        color: #000;
-    }
-
-        .nav-tabs .nav-link.active {
-            font-weight: bold;
-            color: #ffeb3b;
-            background-color: #000;
-            border-color: #000;
-        }
-
-        .nav-tabs .nav-link.active {
-            border-bottom: none;
-        }
-
-        .nav-tabs .nav-link:hover:not(.active) {
-            color: #ffeb3b;
-        }
-</style>
