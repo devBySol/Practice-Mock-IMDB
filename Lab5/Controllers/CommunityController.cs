@@ -14,11 +14,8 @@ namespace Lab5.Controllers
 
         public IActionResult Community()
         {
-            var Posts = _movieRepository.GetAllPosts();
-               
-           
-
-            return View(Posts);
+            var posts = _movieRepository.GetAllPosts();
+            return View(posts);
         }
     }
 }

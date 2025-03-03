@@ -11,7 +11,6 @@
         public string Genre { get; set; }
         public string Director { get; set; }
         public string Writer { get; set; }
-        public string Actors { get; set; }
         public string Plot { get; set; }
         public string Language { get; set; }
         public string Country { get; set; }
@@ -23,11 +22,7 @@
         public string imdbVotes { get; set; }
         public string imdbID { get; set; }
         public string Type { get; set; }
-        public string DVD { get; set; }
-        public string BoxOffice { get; set; }
-        public string Production { get; set; }
-        public string Website { get; set; }
-        public string Response { get; set; }
+      
         public List<Actor> Cast { get; set; } = new List<Actor>();
 
         public string Trailer => !string.IsNullOrEmpty(imdbID)

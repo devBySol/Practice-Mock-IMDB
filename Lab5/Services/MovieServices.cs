@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace Lab5.Services
 {
     public class MovieService
-    {
+    {   
+        // 클래스 필드 HttpClient 효율적 사용을 위해 
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly ActorServices _actorService = new ActorServices();
-
+        private readonly ActorServices _actorService = new ActorServices(); //TMDB에서 배우정보 받아옴(OMdb와 비동기로 동시에 호출)
         private readonly string _apikey = "4568d10a";
-        private List<Movie> _cachedMovies = new List<Movie>();
+        private List<Movie> _cachedMovies = new List<Movie>(); //대량 데이터처리를 빠르게 하기 위해 한 번 불러온 데이터는 캐시에 저장
 
         // 하드코딩된 영화 제목들
         private readonly List<string> _movieTitles = new List<string>
@@ -75,7 +75,7 @@ namespace Lab5.Services
         };
 
 
-
+        // Contructor IHttpClient에서 받아온 정보 관리
         public MovieService(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
@@ -86,7 +86,7 @@ namespace Lab5.Services
         {
             if (_cachedMovies.Count > 0)
             {
-                return _cachedMovies; 
+                return _cachedMovies; //캐시가 있으면 return
             }
 
             var httpClient = _httpClientFactory.CreateClient();
@@ -112,7 +112,7 @@ namespace Lab5.Services
                 }
             }
 
-            _cachedMovies = movies; 
+            _cachedMovies = movies; //없으면 API 호출로 데이터 불러온 후 캐시에 저장
             return movies;
         }
 

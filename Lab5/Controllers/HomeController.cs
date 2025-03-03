@@ -7,13 +7,14 @@ namespace Lab5.Controllers
 {
     public class HomeController : Controller
     {
+        // movie controller와 중복사용으로 별도의 서비스로 관리(OMDb Api)
         private readonly MovieService _movieService;
 
         public HomeController(MovieService movieService)
         {
             _movieService = movieService;
         }
-
+        // 대량 데이터 처리를 위해 비동기로 사용함(로딩속도 개선)
         public async Task<IActionResult> Index()
         {
             var movies = await _movieService.GetMoviesAsync();
@@ -61,6 +62,15 @@ namespace Lab5.Controllers
                 case "fantasy":
                     filteredMovies = allMovies.Where(m => m.Genre.Contains("Fantasy"));
                     break;
+
+                // Top Rated filter
+                case "top-rated":
+                    filteredMovies = allMovies
+                        .Where(m => double.TryParse(m.imdbRating, out _))  // 평점이 있는 경우만
+                        .OrderByDescending(m => double.Parse(m.imdbRating)) // 평점 높은 순 정렬
+                        .Take(10);
+                    break;
+
 
 
                 default:

@@ -2,7 +2,7 @@
 
 namespace Lab5.Models  
 {
-    public class NewsApiResponse
+    public class News
     {
         public string Status { get; set; }
         public int TotalResults { get; set; }

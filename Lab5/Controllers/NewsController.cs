@@ -33,7 +33,7 @@ namespace Lab5.Controllers
             }
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
-            var newsData = JsonConvert.DeserializeObject<NewsApiResponse>(jsonResponse);
+            var newsData = JsonConvert.DeserializeObject<News>(jsonResponse);
 
             return View(newsData);
         }
@@ -54,7 +54,7 @@ namespace Lab5.Controllers
             }
 
             var jsonResponse = await response.Content.ReadAsStringAsync();
-            var newsData = JsonConvert.DeserializeObject<NewsApiResponse>(jsonResponse);
+            var newsData = JsonConvert.DeserializeObject<News>(jsonResponse);
 
             if (newsData?.Articles == null || startIndex >= newsData.Articles.Count)
             {
