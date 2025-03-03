@@ -6,11 +6,9 @@
         @foreach (var movie in Model)
         {
             <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
-                <div class="card bg-transparent border-0 align-items-center shadow-sm hover-zoom">
+                <div class="bg-transparent border-0 align-items-center hover-zoom">
                     <a asp-controller="Movie" asp-action="MovieDetails" asp-route-id="@movie.imdbID" class="d-inline-block text-decoration-none text-dark">
-                        <img src="@movie.Poster" class="card-img-top"
-                             style="width:180px; height: 250px; object-fit: cover;"
-                             alt="@movie.Title Poster">
+                        <img src="@movie.Poster" class="card-img-top" style="width:180px; height: 250px; object-fit: cover;" alt="@movie.Title Poster" >
                     </a>
                 </div>
             </div>
@@ -24,12 +22,3 @@
     }
 </div>
 
-<style>
-    .hover-zoom {
-        transition: transform 0.3s ease-in-out;
-    }
-
-        .hover-zoom:hover {
-            transform: scale(1.05);
-        }
-</style>
