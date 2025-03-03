@@ -40,7 +40,11 @@ public class MockMovieRepository : IMovieRepository
 
     //게시글관련
     public IEnumerable<Post> GetAllPosts() => _posts ?? new List<Post>();
-    public Post GetPostById(int id) => _posts.FirstOrDefault(p => p.Id == id);
+    public Post GetPostById(int id)
+    {
+        return _posts.FirstOrDefault(p => p.Id == id);
+    }
+
     public void AddPost(Post post)
     {
         post.Id = _posts.Count + 1;
@@ -52,17 +56,15 @@ public class MockMovieRepository : IMovieRepository
     public IEnumerable<Comment> GetCommentsByPostId(int postId) => _comments.Where(c => c.PostId == postId).ToList();
     public void AddComment(Comment comment)
     {
-        comment.Id = _comments.Count + 1;
+        comment.Id = _comments.Any() ? _comments.Max(c => c.Id) + 1 : 1;
         comment.DatePosted = DateTime.Now;
         _comments.Add(comment);
 
         var post = _posts.FirstOrDefault(p => p.Id == comment.PostId);
         if (post != null)
         {
-            if (post.Comments == null) post.Comments = new List<Comment>();
             post.Comments.Add(comment);
         }
-
     }
 
     // 이벤트 관련

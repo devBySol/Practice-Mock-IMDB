@@ -5,8 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IMovieRepository, MockMovieRepository>();
-builder.Services.AddScoped<MovieService>();
+builder.Services.AddSingleton<IMovieRepository, MockMovieRepository>();
+builder.Services.AddSingleton<MovieService>();
 builder.Services.AddHttpClient();
 
 
@@ -17,6 +17,9 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+} else
+{
+    app.UseDeveloperExceptionPage();
 }
 app.UseStaticFiles();
 

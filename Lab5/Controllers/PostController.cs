@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Lab5.Models;
 using System;
+using System.Xml.Linq;
+using System.Reflection;
 
 namespace Lab5.Controllers
 {
@@ -35,33 +37,42 @@ namespace Lab5.Controllers
 
         // 게시글 작성 (GET)
         [HttpGet]
-        public IActionResult CreatePost()
+        public IActionResult AddPost()
         {
             return View();
         }
 
         // 게시글 작성 (POST)
         [HttpPost]
-        public IActionResult CreatePost(Post model)
+        public IActionResult AddPost(Post model)
         {
             if (ModelState.IsValid)
             {
                 _movieRepository.AddPost(model);
-                return RedirectToAction("Community", "Community");  
+                return RedirectToAction("Community", "Community");
             }
             return View(model);
         }
 
+
         // 댓글 작성 (POST)
         [HttpPost]
-        public IActionResult AddComment(Comment model)
+        public IActionResult AddComment([FromServices] IMovieRepository repo, CommentInputModel commentInput)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _movieRepository.AddComment(model);
-                return RedirectToAction("PostDetails", new { id = model.PostId });
+                return BadRequest("Invalid data");
             }
-            return RedirectToAction("PostDetails", new { id = model.PostId });
+            var comment = new Comment
+            {
+                PostId = commentInput.PostId,
+                UserName = commentInput.UserName,
+                Content = commentInput.Content,
+                DatePosted = DateTime.Now  
+            };
+            _movieRepository.AddComment(comment);
+            return RedirectToAction("PostDetails", new { id = comment.PostId });
         }
+
     }
 }

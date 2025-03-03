@@ -79,7 +79,7 @@ namespace Lab5.Controllers
             }
 
            // 부분만 비동기로 업데이트 (속도가 빠름빠름)
-            return PartialView("MoviePartial", filteredMovies);
+            return PartialView("_MoviePartial", filteredMovies);
         }
     }
     }
