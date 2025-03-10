@@ -1,15 +1,14 @@
 ﻿@model IEnumerable<Lab5.Models.Event>
 
 <body class="bg-black">
-        <ul class="list-group pt-5" style="list-style-type: none; padding-left: 0;">
+    <ul class="align-items-center list-group" style="list-style-type: none; padding-left: 0;">
         @foreach (var ev in Model)
         {
-                <li class="m-1 bg-transparent">
-                    <a href="@ev.Link" target="_blank">
-                    <img src="@ev.Poster", class="position-relative w-100" />
-               </a>
-            
-            </li>
+                <li class="m-1 bg-transparent" style="display: flex; justify-content: center; align-items: center; padding: 0;">
+                    <a href="@ev.Link" target="_blank" style="display: block; width: 100%; max-width: 1000px;">
+                        <img src="@ev.Poster" class="w-100" style="width: 100%; height: auto; object-fit: contain;" />
+                    </a>
+                </li>
         }
     </ul>
 </body>

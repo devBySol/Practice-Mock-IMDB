@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.css" asp-append-version="true" />
 </head>
 
-<body>
+
 
     <!-- Navigation Bar -->
     <header>
@@ -35,15 +35,13 @@
         </nav>
     </header>
 
-
+<body>
 
     @if (ViewData["Title"] == "Home")
     {
         <section class="hero-section position-relative" id="heroSection">
             <!-- 배경 이미지 -->
-            <div class="position-relative w-100 d-flex align-items-center justify-content-center bg-image visible"
-                 style="background: url('https://universalpictures.ca/wp-content/uploads/2024/02/Universal_HomeMainCarousel_1920x1025-5.jpg') no-repeat center center/cover; height: 600px;"
-                 id="heroBackground">
+            <div class="position-relative w-100 d-flex align-items-center justify-content-center bg-image visible" id="heroBackground">
                 <div class="position-absolute top-50 end-50 p-lg-5 p-md-5 p-3 text-start text-white" id="heroContent">
                     <h1 class="fw-bold display-4">THE WICKED</h1>
                     <p class="lead fs-6">ADVENTURE · MUSICAL · FANTASY</p>
@@ -68,7 +66,6 @@
     }
 
 
- 
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -1,13 +1,21 @@
 using Lab5.Models;
 using Lab5.Services;
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IMovieRepository, MockMovieRepository>();
+//builder.Services.AddSingleton<IMovieRepository, MockMovieRepository>();
+builder.Services.AddScoped<IMovieRepository, SQLMovieRepository>();
+
 builder.Services.AddSingleton<MovieService>();
 builder.Services.AddHttpClient();
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MovieDBConnection")));
+
+
 
 
 
