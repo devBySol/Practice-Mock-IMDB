@@ -35,6 +35,7 @@ html {
     filter: invert(1);
 }
 
+
 /* ===== 히어로 섹션 배경 설정 ===== */
 #heroBackground {
     background: url('https://universalpictures.ca/wp-content/uploads/2024/02/Universal_HomeMainCarousel_1920x1025-5.jpg') no-repeat center center / cover;
@@ -43,7 +44,7 @@ html {
 }
 
 /* 작은 화면에서 배경 이미지 변경 */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     #heroBackground {
         background: url('https://hellgatelance.com/wp-content/uploads/2025/01/Wicked_PosterMovie_Arianagrande_Xmag_140524_Cover-960x1200.jpg') no-repeat center center / cover;
     }
@@ -65,6 +66,18 @@ html {
         margin: 5px 0;
         font-size: 14px;
     }
+}
+
+@media (max-width: 1100px) {
+    .nav-item.d-none.d-md-block {
+        display: none !important;
+    }
+
+    .nav-item.dropdown.d-md-none {
+        display: block !important;
+    }
+}
+
 }
 
 /* ===== 이미지 호버 효과 ===== */
