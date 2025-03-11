@@ -1,6 +1,8 @@
-using Lab5.Models;
+﻿using Lab5.Models;
 using Lab5.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,12 +14,27 @@ builder.Services.AddScoped<IMovieRepository, SQLMovieRepository>();
 
 builder.Services.AddSingleton<MovieService>();
 builder.Services.AddHttpClient();
+
+var connectionString = builder.Configuration.GetConnectionString("MovieDBConnection");
+
 builder.Services.AddDbContext<AppDBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MovieDBConnection")));
+    options.UseMySql(connectionString,
+        ServerVersion.AutoDetect(connectionString)));
 
 
 
+Console.WriteLine($"💛Running Environment: {builder.Environment.EnvironmentName}💛");
 
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = false;
+})
+.AddEntityFrameworkStores<AppDBContext>()
+.AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -33,6 +50,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
