@@ -1,5 +1,7 @@
-﻿using Lab5.Models;
-using Lab5.Services;
+﻿using Lab5.Data;  
+using Lab5.Data.Models;  
+using Lab5.Data.Repositories;  
+using Lab5.Services;  
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;

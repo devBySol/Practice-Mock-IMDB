@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|c:\\users\\manid\\desktop\\term4\\comp4514\\lab5 project1\\lab5\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|solutionrelative:lab5\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|c:\\users\\manid\\desktop\\term4\\comp4514\\lab5 project1\\lab5\\models\\mockmovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|solutionrelative:lab5\\models\\mockmovierepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|c:\\users\\manid\\desktop\\term4\\comp4514\\lab5 project1\\lab5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|solutionrelative:lab5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|c:\\users\\manid\\desktop\\term4\\comp4514\\lab5 project1\\lab5\\data\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|solutionrelative:lab5\\data\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|c:\\users\\manid\\desktop\\term4\\comp4514\\lab5 project1\\lab5\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5AB0EFB-3EC0-49F6-811C-33C59C12503B}|Lab5\\Lab5.csproj|solutionrelative:lab5\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\.gitignore",
+              "RelativeDocumentMoniker": "Lab5\\.gitignore",
+              "ToolTip": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\.gitignore",
+              "RelativeToolTip": "Lab5\\.gitignore",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHgSURBVEhLtZVdTsJAFIWroTyDK3ELJuCbsA1ZhQRFRETkV6yV8AAsgAI\u002BugW3wAr0RUop7Tj3dmagtLXFhJOc3mEynXu\u002BSWmlg4oQcsSGqOFwSKcIzAcY7rFZdeZkWf42DOMsl7v8ZNsEazAYEMuyXF5zr7nXWG3bJqPRiMznc6Kqb1\u002BtdueUbePSMasoSASiN0sW2AJbwrSRMKwBJZNJKZVOJeJx\u002BaPRbHma\u002BDbAqzOMpBPa5DydxiZsSijGKoo30MZjrH8pm81iVRQFKygmxxNs6K9\u002Bv4/nvlqZ1CticBuOl8IGWS4NogsviWmuSe2p7uH2EMAKTQsn2FUmkxUnEKher4dPjH9ymjogva47BNXHWhgBXCRpomnOxB6KRKCqKhJsznoneUD6BSOoPFSjEUwnByJQlFf8l7rTO6ndyalZcm7TNEn5vhJG4CD8h\u002BAikwkn6HZf8F3jSSu8OfNt/yx0sqIEpbtyOAGsmE4nzsQeikTQ7jwTkxKItCyxX2qenBsIirelcAJAmB2KoNlq4/Psl1Z4K/UuQeGmGIGA6n02xbqPgIBuwH4FqN5o4vMMKYOSBhkI8oVrTwfPBwdWxOQYWt7D/P5duT768D7HJhFtU9MBVj5XyF\u002B59jywJOkX7ucXnGOxDX8AAAAASUVORK5CYII=",
+              "WhenOpened": "2025-03-12T05:50:46.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MockMovieRepository.cs",
+              "DocumentMoniker": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\Models\\MockMovieRepository.cs",
+              "RelativeDocumentMoniker": "Lab5\\Models\\MockMovieRepository.cs",
+              "ToolTip": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\Models\\MockMovieRepository.cs",
+              "RelativeToolTip": "Lab5\\Models\\MockMovieRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCEAAABZAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T05:46:26.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\Program.cs",
+              "RelativeDocumentMoniker": "Lab5\\Program.cs",
+              "ToolTip": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\Program.cs",
+              "RelativeToolTip": "Lab5\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T05:43:24.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\Data\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Lab5\\Data\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\Data\\Models\\User.cs",
+              "RelativeToolTip": "Lab5\\Data\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T05:41:27.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Lab5\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "Lab5\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T05:40:53.881Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

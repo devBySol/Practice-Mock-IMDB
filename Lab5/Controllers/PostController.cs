@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Lab5.Models;
+using Lab5.Data.Repositories;
+using Lab5.Data.Models;
 using System;
 using System.Xml.Linq;
 using System.Reflection;

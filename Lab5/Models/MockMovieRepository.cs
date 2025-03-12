@@ -1,5 +1,6 @@
-﻿using Lab5.Models;
-using Lab5;
+﻿using Lab5;
+using Lab5.Data.Models;
+using Lab5.Data.Repositories;
 
 public class MockMovieRepository : IMovieRepository
 {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Lab5.Models;
+using Lab5.Data.Repositories;
 
 namespace Lab5.Controllers
 {

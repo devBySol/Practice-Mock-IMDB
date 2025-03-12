@@ -1,4 +1,4 @@
-﻿using Lab5.Models;
+﻿using Lab5.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Lab5.Controllers

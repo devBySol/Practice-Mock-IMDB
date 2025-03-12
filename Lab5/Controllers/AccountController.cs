@@ -1,4 +1,4 @@
-﻿using Lab5.Models;
+﻿using Lab5.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Lab5.ViewModels;
