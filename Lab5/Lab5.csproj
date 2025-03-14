@@ -27,15 +27,15 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
   </ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\Lab5.Data\Lab5.Data.csproj" />
+	</ItemGroup>
+
   <ItemGroup>
     <Content Update="libman.json">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 	<PropertyGroup>
 		<EnableDefaultCompileItems>true</EnableDefaultCompileItems>

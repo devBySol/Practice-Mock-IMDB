@@ -21,7 +21,9 @@ var connectionString = builder.Configuration.GetConnectionString("MovieDBConnect
 
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseMySql(connectionString,
-        ServerVersion.AutoDetect(connectionString)));
+        ServerVersion.AutoDetect(connectionString),
+        b => b.MigrationsAssembly("Lab5.Data"))
+);
 
 
 
