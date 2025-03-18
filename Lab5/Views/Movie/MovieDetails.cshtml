@@ -1,4 +1,5 @@
 ﻿@model Movie
+<link rel="stylesheet" href="~/css/site.css" />
 <body class="w-100">
     @* Movie Hero Section *@
     <div class="position-relative text-white" style="height: 450px; background: url('@Model.Poster') no-repeat center/cover;">
@@ -28,7 +29,7 @@
 
                     var averageRating = ((metacriticScore + imdbScore + rtScore) / 3.0f).ToString("0.0");
                 }
-                <div class="col-md-3 text-center text-white">
+                <div class="rating col-md-3 mt-5 text-center text-white">
                     <div class="d-flex flex-column align-items-center">
                         <div class="rounded-circle border border-3 border-light d-flex align-items-center justify-content-center"
                              style="width: 100px; height: 100px; background: rgba(0,0,0,0.7);">
@@ -56,8 +57,19 @@
 
                     </div>
                 </div>
-            </div>
+    <div class="small-rating d-flex flex-column align-items-center justify-content-center text-center text-white p-3">
+        <p class="text-white mt-2 mb-1 fs-6 mb-2 fw-bold">Average Rating</p>
+<div class="d-flex justify-content-center">
+        <div class="rounded-circle border border-4 border-warning d-flex align-items-center justify-content-center"
+             style="width: 90px; height: 90px; background: rgba(0,0,0,0.8);">
+            <span class="fs-2 fw-bold text-warning">@averageRating</span>
         </div>
+    </div>
+</div>
+
+
+        </div>
+    </div>
     </div>
 
     @* Movie Details *@
@@ -143,4 +155,7 @@
     .nav-tabs .nav-link:hover:not(.active) {
         color: #ffeb3b;
     }
+
+   
+
 </style>

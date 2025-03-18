@@ -20,5 +20,15 @@ namespace Lab5.ViewModels
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string Gender { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        [MaxLength(10)]
+        public string PostalCode { get; set; }
     }
 }

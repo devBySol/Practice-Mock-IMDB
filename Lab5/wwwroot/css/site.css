@@ -80,6 +80,7 @@ html {
 
 }
 
+
 /* ===== 이미지 호버 효과 ===== */
 .hover-zoom {
     transition: transform 0.3s ease-in-out;
@@ -180,5 +181,23 @@ html {
 
     .news-item.small {
         height: 150px;
+    }
+}
+
+.rating {
+    display: block;
+}
+
+.small-rating {
+    display: none !important;
+}
+
+@media (max-width: 800px) {
+    .rating {
+        display: none !important;
+    }
+
+    .small-rating {
+        display: block !important;
     }
 }

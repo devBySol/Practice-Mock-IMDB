@@ -28,9 +28,15 @@ namespace Lab5.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.UserName, Email = model.Email };
+                var user = new User
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                    Gender = model.Gender,
+                    City = model.City,
+                    PostalCode = model.PostalCode
+                };
 
-      
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -61,7 +67,7 @@ namespace Lab5.Controllers
                 return View(model);
             }
 
-           
+
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {

@@ -1,6 +1,8 @@
 ﻿using Lab5.Models;
 using Lab5.Services;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Lab5.Controllers
@@ -9,6 +11,8 @@ namespace Lab5.Controllers
     {
         // movie controller와 중복사용으로 별도의 서비스로 관리(OMDb Api)
         private readonly MovieService _movieService;
+
+
 
         public HomeController(MovieService movieService)
         {
@@ -19,6 +23,8 @@ namespace Lab5.Controllers
         {
             var movies = await _movieService.GetMoviesAsync();
             return View(movies);
+
+            //throw new Exception("err"); //
         }
         // 장르별 필터링
         public async Task<IActionResult> FilterMovies(string filter)
@@ -81,6 +87,10 @@ namespace Lab5.Controllers
            // 부분만 비동기로 업데이트 (속도가 빠름빠름)
             return PartialView("_MoviePartial", filteredMovies);
         }
+
+     
+     
     }
-    }
+}
+    
 

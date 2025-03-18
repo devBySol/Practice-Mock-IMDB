@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "goRfMHVhB+Y=",
+  "dgSpecHash": "qPe2hVIkDno=",
   "success": true,
-  "projectFilePath": "C:\\Users\\manid\\Desktop\\term4\\COMP4514\\lab5 project1\\Lab5.Data\\Lab5.Data.csproj",
+  "projectFilePath": "C:\\Users\\manid\\Desktop\\새 폴더\\Lab5.Data\\Lab5.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manid\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\manid\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('serviceConnectorResourceGroupName')]/providers/Microsoft.Web/sites/IMDb/providers/Microsoft.ServiceLinker/linkers/MovieDBConnection_90442BD4BF",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/imdbwithsql/databases/moviedb",
+      "type": "mssql.azure",
+      "connectionId": "MovieDBConnection"
+    }
+  }
+}

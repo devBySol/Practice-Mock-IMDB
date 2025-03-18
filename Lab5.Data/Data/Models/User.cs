@@ -17,8 +17,18 @@ namespace Lab5.Data.Models
         [Required]
         public override string PasswordHash { get; set; }
 
+        [Required]
+        public string Gender { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        [MaxLength(10)]
+        public string PostalCode { get; set; }
 
 
-       
+
+
     }
 }

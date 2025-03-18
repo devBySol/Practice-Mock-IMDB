@@ -9,26 +9,34 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-//builder.Services.AddSingleton<IMovieRepository, MockMovieRepository>();
-builder.Services.AddScoped<IMovieRepository, SQLMovieRepository>();
 
-builder.Services.AddSingleton<MovieService>();
-builder.Services.AddHttpClient();
+// 환경감지
+var env = builder.Environment.EnvironmentName;
+Console.WriteLine($"💛 Running Environment: {env} 💛");
 
+// 환경별 appsetting.json
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+// 환경에 맞는 DB
 var connectionString = builder.Configuration.GetConnectionString("MovieDBConnection");
-
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseMySql(connectionString,
         ServerVersion.AutoDetect(connectionString),
         b => b.MigrationsAssembly("Lab5.Data"))
 );
 
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+//builder.Services.AddSingleton<IMovieRepository, MockMovieRepository>(); //Mock리포
+builder.Services.AddScoped<IMovieRepository, SQLMovieRepository>();
 
-
-Console.WriteLine($"💛Running Environment: {builder.Environment.EnvironmentName}💛");
-
+// 영화관련Api, 뉴스Api서비스
+builder.Services.AddSingleton<MovieService>();
+builder.Services.AddHttpClient();
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
@@ -40,20 +48,39 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 .AddEntityFrameworkStores<AppDBContext>()
 .AddDefaultTokenProviders();
 
-var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+if (builder.Environment.IsDevelopment())
+{
+    builder.Logging.SetMinimumLevel(LogLevel.Debug);
+}
+else if (builder.Environment.IsStaging())
+{
+    builder.Logging.SetMinimumLevel(LogLevel.Warning);
+}
+else
+{
+    builder.Logging.SetMinimumLevel(LogLevel.Error);
+}
+
+var app = builder.Build();
+//app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
+
+
+// 환경별 예외처리
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-} else
+    app.UseExceptionHandler("/Error");
+    app.UseStatusCodePagesWithReExecute("/Error/{0}");
+
+} 
+else
 {
     app.UseDeveloperExceptionPage();
 }
+
+
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
 

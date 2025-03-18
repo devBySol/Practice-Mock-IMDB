@@ -42,14 +42,14 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5230",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "CustomEnvironment"
+        "ASPNETCORE_ENVIRONMENT": "Testing"
       }
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "IISExpress"
       }
     }
   }
